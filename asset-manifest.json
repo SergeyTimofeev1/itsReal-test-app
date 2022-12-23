@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/itsreal-test-app/static/css/main.18a92ce7.css",
+    "main.js": "/itsreal-test-app/static/js/main.8e64ac7d.js",
+    "index.html": "/itsreal-test-app/index.html",
+    "main.18a92ce7.css.map": "/itsreal-test-app/static/css/main.18a92ce7.css.map",
+    "main.8e64ac7d.js.map": "/itsreal-test-app/static/js/main.8e64ac7d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.18a92ce7.css",
+    "static/js/main.8e64ac7d.js"
+  ]
+}
