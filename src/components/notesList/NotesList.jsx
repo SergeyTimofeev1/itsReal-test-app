@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import AddNoteButon from '../addButton/AddNoteButon';
 import Note from '../note/Note';
 
@@ -8,10 +8,17 @@ const NoteList = () => {
 
   const addNote = () => {
     const newNote = {
+      id: notes.length + 1,
       text: 'Исчезнет через ',
     }
     setNotes([...notes, newNote])
   }
+
+  const removeNote = (note) => {
+    setNotes(notes.filter(n => note.id !== n.id))
+  }
+
+
 
   return (
     <div className="notes">
@@ -21,11 +28,13 @@ const NoteList = () => {
           {notes.length !== 0
             ? notes.map((note, i) =>
               <Note
-                id={i + 1}
-                text={note.text}
-                key={i + 1}
+                key={note.id}
+                note={note}
+                remove={removeNote}
+                notes={notes}
               />)
-            : <h2>Добавьте заметку</h2>}
+            : <h2>Добавьте заметку</h2>
+          }
         </ul>
       </div>
     </div>

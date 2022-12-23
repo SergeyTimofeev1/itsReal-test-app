@@ -1,20 +1,22 @@
-import { useState, useEffect, useContext } from 'react';
+import { useState, useEffect } from 'react';
 import { generateRangomNumber } from '../../utils/generateRandomNumber';
 
 
 
-const Timer = () => {
+const Timer = ({ note, remove, notes }) => {
 
   const [delay, setDelay] = useState(generateRangomNumber(10, 30))
   const [timerHandler, setTimerHandler] = useState(true)
-  const [timeEnd, setTimeEnd] = useState(false)
 
-  const minutes = Math.floor(delay / 60)
   const seconds = Math.floor(delay % 60)
 
-  const startTimer = () => {
-    setTimerHandler(prev => !prev)
-  }
+  useEffect(() => {
+    if (!timerHandler) {
+      remove(note)
+      console.log(notes);
+    }
+  }, [timerHandler]);
+
 
   useEffect(() => {
     if (timerHandler) {
@@ -23,7 +25,7 @@ const Timer = () => {
       }, 1000);
 
       if (delay === 0) {
-        setTimeEnd(prev => !prev)
+        setTimerHandler(prev => !prev)
         clearInterval(timer)
       }
 

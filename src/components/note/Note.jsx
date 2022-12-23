@@ -1,10 +1,11 @@
 import React from 'react';
 import Timer from '../timer/Timer';
 
-const Note = ({ id, text }) => {
+const Note = ({ note, remove, notes }) => {
+
   return (
     <li className="notes-list__item">
-      {id}. {text} <Timer />
+      {note.id}. {note.text} <Timer note={note} remove={remove} notes={notes} />
     </li>
   );
 }
