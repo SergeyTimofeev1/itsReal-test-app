@@ -1,6 +1,5 @@
 import './App.scss';
 import NoteList from './components/notesList/NotesList';
-import Timer from './components/timer/Timer';
 
 function App() {
   return (

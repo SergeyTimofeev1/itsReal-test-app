@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import AddNoteButon from '../addButton/AddNoteButon';
 import Note from '../note/Note';
 
@@ -28,6 +28,7 @@ const NoteList = () => {
           {notes.length !== 0
             ? notes.map((note, i) =>
               <Note
+                id={i + 1}
                 key={note.id}
                 note={note}
                 remove={removeNote}
