@@ -1,0 +1,8 @@
+.notes-list {
+  &__item {
+    display: flex;
+    justify-content: space-between;
+    gap: 5%;
+    align-items: center;
+  }
+}

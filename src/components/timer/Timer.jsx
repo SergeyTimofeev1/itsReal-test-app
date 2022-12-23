@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { generateRangomNumber } from '../../utils/generateRandomNumber';
+import './timer.scss'
 
 
 
@@ -13,7 +14,6 @@ const Timer = ({ note, remove, notes }) => {
   useEffect(() => {
     if (!timerHandler) {
       remove(note)
-      console.log(notes);
     }
   }, [timerHandler]);
 

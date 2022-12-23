@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import AddNoteButon from '../addButton/AddNoteButon';
 import Note from '../note/Note';
+import './notesList.scss'
 
 
 const NoteList = () => {
@@ -9,7 +10,7 @@ const NoteList = () => {
   const addNote = () => {
     const newNote = {
       id: notes.length + 1,
-      text: 'Исчезнет через ',
+      text: 'Заметка номер ',
     }
     setNotes([...notes, newNote])
   }
@@ -24,7 +25,7 @@ const NoteList = () => {
     <div className="notes">
       <AddNoteButon addNote={addNote} />
       <div className="notes-list">
-        <ul className="notes-list__list">
+        <ul className="notes-list__list list-group">
           {notes.length !== 0
             ? notes.map((note, i) =>
               <Note

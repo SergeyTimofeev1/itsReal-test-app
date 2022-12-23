@@ -5,7 +5,7 @@ const AddNoteButon = ({ addNote }) => {
 
   return (
     <button
-      className="btn btn-outline-primary"
+      className="btn btn-outline-primary mb-2"
       onClick={addNote}
     >
       Добавить заметку
