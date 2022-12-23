@@ -1,9 +1,11 @@
-import './App.css';
+import './App.scss';
+import NoteList from './components/notesList/NotesList';
+import Timer from './components/timer/Timer';
 
 function App() {
   return (
     <div className="App">
-      <h1>Start</h1>
+      <NoteList />
     </div>
   );
 }
